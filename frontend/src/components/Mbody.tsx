@@ -1,13 +1,5 @@
 import MusicCard from "@/components/MusicCard.tsx";
-import type { a } from "node_modules/vite/dist/node/chunks/moduleRunnerTransport";
-
-
-
-type Props = {
-  chl: React.ComponentType<any>;
-};
-
-function Mbody({chl}: Props) {
+function Mbody() {
   return (
     <div className="bg-black h-[90vh] w-[100vw] flex justify-between items-center">
       <div className="bg-gray-900 h-[87.5vh] w-[32.5vw] flex flex-col gap-[7px] items-center py-[15px]">
@@ -15,7 +7,6 @@ function Mbody({chl}: Props) {
           <h5 className="mb-2 text-2xl font-semibold tracking-tight text-heading">
             Create Playlist
           </h5>
-          {chl}
           <p className="mb-3 text-body">organize all your songs together</p>
           <a
             href="#"
@@ -63,7 +54,6 @@ function Mbody({chl}: Props) {
       </div>
 
       <div className="bg-gray-900 h-[87.5vh] w-[65vw] py-[15px] px-[15px]">
-
         <div className="grid grid-cols-5 w-[62vw] h-[85vh] overflow-auto gap-[5px]  ">
           <MusicCard />
           <MusicCard />
