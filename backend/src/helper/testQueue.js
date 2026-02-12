@@ -1,6 +1,7 @@
 
 import processItem from "./processitem.js";
 import deleteFile from "./deletefile.js";
+import { rootDir } from '../../root.js'
 
 export class TestQueue {
 
@@ -63,7 +64,7 @@ export class TestQueue {
             return
         }
         await processItem(this.top.data)
-        deleteFile('C:\\Users\\arbaa\\current_working_project\\backend\\uploads\\input\\' + this.top.data + '.mp3');
+        deleteFile(rootDir + '\\uploads\\input\\' + this.top.data + '.mp3');
         this.deleteNode()
         this.startProcessing()
     }

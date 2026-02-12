@@ -1,5 +1,12 @@
-import MusicCard from "@/components/MusicCard.tsx";
-function Mbody() {
+
+import McardCont from "./McardCont";
+import { MusicCard } from "./MusicCard";
+type insideMusic = {
+    Ibox: React.ComponentType<any>;
+}
+
+
+function Mbody({insideMusic}:insideMusic) {
   return (
     <div className="bg-black h-[90vh] w-[100vw] flex justify-between items-center">
       <div className="bg-gray-900 h-[87.5vh] w-[32.5vw] flex flex-col gap-[7px] items-center py-[15px]">
@@ -54,34 +61,7 @@ function Mbody() {
       </div>
 
       <div className="bg-gray-900 h-[87.5vh] w-[65vw] py-[15px] px-[15px]">
-        <div className="grid grid-cols-5 w-[62vw] h-[85vh] overflow-auto gap-[5px]  ">
-          <MusicCard />
-          <MusicCard />
-          <MusicCard />
-          <MusicCard />
-          <MusicCard />
-          <MusicCard />
-          <MusicCard />
-          <MusicCard />
-          <MusicCard />
-          <MusicCard />
-          <MusicCard />
-          <MusicCard />
-          <MusicCard />
-          <MusicCard />
-          <MusicCard />
-          <MusicCard />
-          <MusicCard />
-          <MusicCard />
-          <MusicCard />
-          <MusicCard />
-          <MusicCard />
-          <MusicCard />
-          <MusicCard />
-          <MusicCard />
-          <MusicCard />
-          <MusicCard />
-        </div>
+       <McardCont MusicCard={MusicCard}/>
       </div>
     </div>
   );

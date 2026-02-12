@@ -6,7 +6,7 @@ function Home() {
   return (
     <div className="h-[100vh] w-[100vw] bg-white">
       <Navbar />
-      <Mbody chl = {<p>Rammmm</p>}/>
+      <Mbody/>
     </div>
   );
 }

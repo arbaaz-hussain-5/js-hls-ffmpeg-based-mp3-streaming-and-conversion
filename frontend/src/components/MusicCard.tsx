@@ -1,10 +1,14 @@
 import React from "react";
+export type musicCardProps = {
+  songName:string,
+  songImgUrl:string
+}
 
-const MusicCard: React.ComponentType<any> = function(): React.ReactNode {
+export const MusicCard = function({songName, songImgUrl}:musicCardProps): React.ReactNode {
   return (
     <div className="w-[150px] h-[200px] bg-white flex justify-center pt-[3px] relative">
       <img
-        src="https://m.media-amazon.com/images/I/81p6paS5TzL._UF1000,1000_QL80_.jpg"
+        src={songImgUrl}
         className="w-[140px] h-[140px]"
       ></img>
       <div className="h-[55px] w-[150px] absolute flex gap-2 items-center bottom-0 left-0 px-[2px]">
@@ -29,10 +33,9 @@ const MusicCard: React.ComponentType<any> = function(): React.ReactNode {
             d="M351.74 275.46c17.09-11.03 17.04-23.32 0-33.09l-133.52-97.7c-13.92-8.73-28.44-3.6-28.05 14.57l.54 191.94c1.2 19.71 12.44 25.12 29.04 16l131.99-91.72z"
           />
         </svg>
-        <span className="bg-blue"> sanam re</span>
+        <span className="bg-blue">{songName}</span>
       </div>
     </div>
   );
 }
 
-export default MusicCard;
