@@ -1,18 +1,23 @@
 
 import McardCont from "./McardCont";
-import { MusicCard } from "./MusicCard";
-type insideMusic = {
-    Ibox: React.ComponentType<any>;
+import SongCard from "./SongCard";
+import MusicPlayer from "./MusicPlayer";
+import { Link } from "react-router";
+import { useContext } from "react";
+import { MusicContext } from "./MusiContext";
+type Thand = {
+  Sam: React.ComponentType<any>;
 }
 
 
-function Mbody({insideMusic}:insideMusic) {
+function Mbody({Sam}:Thand) {
+  const f = useContext(MusicContext)
   return (
     <div className="bg-black h-[90vh] w-[100vw] flex justify-between items-center">
       <div className="bg-gray-900 h-[87.5vh] w-[32.5vw] flex flex-col gap-[7px] items-center py-[15px]">
-        <div className="bg-white block max-w-sm p-6 border border-default rounded-base shadow-xs w-[30vw]">
+      <Link to = "/playlist"> <div className="bg-white block max-w-sm p-6 border border-default rounded-base shadow-xs w-[30vw]">
           <h5 className="mb-2 text-2xl font-semibold tracking-tight text-heading">
-            Create Playlist
+            Playlist
           </h5>
           <p className="mb-3 text-body">organize all your songs together</p>
           <a
@@ -31,7 +36,7 @@ function Mbody({insideMusic}:insideMusic) {
               />
             </svg>
           </a>
-        </div>
+        </div></Link>
         <div className="bg-white block max-w-sm p-6 border border-default rounded-base shadow-xs w-[30vw]">
           <h5 className="mb-2 text-2xl font-semibold tracking-tight text-heading">
             Favrotois
@@ -59,10 +64,11 @@ function Mbody({insideMusic}:insideMusic) {
           </a>
         </div>
       </div>
-
-      <div className="bg-gray-900 h-[87.5vh] w-[65vw] py-[15px] px-[15px]">
-       <McardCont MusicCard={MusicCard}/>
+      <div className="bg-gray-900 h-[87.5vh] w-[65vw] py-[15px] px-[15px] flex justify-center relative">
+       <Sam/>
+        <div className="absolute bottom-0"> <MusicPlayer currentTime={58} duration={69}/></div>
       </div>
+
     </div>
   );
 }

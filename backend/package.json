@@ -1,6 +1,7 @@
 {
   "type": "module",
   "dependencies": {
+    "cors": "^2.8.6",
     "express": "^5.2.1",
     "multer": "^2.0.2",
     "nanoid": "^5.1.6",
@@ -14,6 +15,6 @@
     "typescript": "^5.9.3"
   },
   "scripts": {
-    "server": "node ./src/server.js"
+    "server": "node --watch ./src/server.js"
   }
 }

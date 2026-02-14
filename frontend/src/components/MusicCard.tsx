@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
+import { MusicContext } from "./MusiContext";
 export type musicCardProps = {
   songName:string,
   songImgUrl:string
 }
 
 export const MusicCard = function({songName, songImgUrl}:musicCardProps): React.ReactNode {
+  const h = useContext(MusicContext);
   return (
-    <div className="w-[150px] h-[200px] bg-white flex justify-center pt-[3px] relative">
+    <div onClick={() => {
+      h.src = "http://localhost:3000/yx2PIdPExFR.m3u8"
+      console.log(h)
+      h.play()
+    }}  className="w-[150px] h-[200px] bg-white flex justify-center pt-[3px] relative">
       <img
         src={songImgUrl}
         className="w-[140px] h-[140px]"

@@ -5,6 +5,7 @@ import {rootDir} from '../root.js'
 import { nanoid } from 'nanoid';
 import { TestQueue } from './helper/testQueue.js';
 import { fileURLToPath } from 'url';
+import cors from 'cors';
 
 const PORT = 3000;
 const tque = new TestQueue()
@@ -20,7 +21,7 @@ const upload = multer({ storage });
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express();
-
+app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
 app.post('/upload', upload.single('file'), (req, res) => {
   if (!req.file) {
@@ -34,6 +35,7 @@ app.get('/:x', (req, res) => {
   const name = (req.params.x).split(".");
   res.sendFile(rootDir + '/uploads/result/'+name[0].slice(0,11)+'/'+req.params.x)
 });
+
 
 
 app.listen(PORT, () => {

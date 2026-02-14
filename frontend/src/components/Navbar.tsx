@@ -1,5 +1,5 @@
 
-
+import { Link } from "react-router"
 export default function Navbar() {
     return (
         <div className="h-[10vh] w-[100vw] bg-black flex justify-between items-center ">
@@ -20,9 +20,9 @@ export default function Navbar() {
                     <line x1="60" y1="145" x2="140" y2="145" stroke="#94a3b8" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 12" />
                 </svg>
                 <div className="flex items-center gap-[10px]" >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="8vh" height="8vh" viewBox="0 0 432 384">
+                 <Link to = "/">   <svg xmlns="http://www.w3.org/2000/svg" width="8vh" height="8vh" viewBox="0 0 432 384">
                         <path fill="white" d="M171 363H64V192H0L213 0l214 192h-64v171H256V235h-85v128z" />
-                    </svg>
+                    </svg></Link>
                     <div className="flex px-4 py-3 rounded-md border-2 border-blue-500 h-[8vh] w-[35vw]  overflow-hidden max-w-md ">
                         <svg
                             className="fill-gray-600 mr-3 rotate-90"
@@ -40,18 +40,18 @@ export default function Navbar() {
                 </div>
             </div>
             <div className="flex items-center gap-[10px]" >
-                <button className="cursor-pointer transition-all bg-blue-500 text-white px-6 h-[8vh] rounded-lg
+                <Link to = "/signin"><button className="cursor-pointer transition-all bg-blue-500 text-white px-6 h-[8vh] rounded-lg
 border-blue-600
 border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px]
 active:border-b-[2px] active:brightness-90 active:translate-y-[2px]">
                     SIGN IN
-                </button>
-                <button className="cursor-pointer transition-all bg-blue-500 text-white px-6 h-[8vh] rounded-lg
+                </button></Link>
+                <Link to ="/signup"><button className="cursor-pointer transition-all bg-blue-500 text-white px-6 h-[8vh] rounded-lg
 border-blue-600
 border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px]
 active:border-b-[2px] active:brightness-90 active:translate-y-[2px]">
                     SIGN UP
-                </button>
+                </button></Link>
             </div>
         </div>
     )

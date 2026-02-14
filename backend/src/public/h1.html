@@ -15,7 +15,7 @@
       );
     });
     hls.loadSource('./rCn8B2_Y8b6/rCn8B2_Y8b6.m3u8');
-    // bind them together
+
     hls.attachMedia(audio);
     console.log(hls.allAudioTracks)
   }
@@ -23,7 +23,7 @@
 <button onclick="myFunction()">Click me</button>
 
 <script>
-  // Define the function in a script tag or external JS file
+
   function myFunction() {
     document.getElementById('audio').play();
   }
